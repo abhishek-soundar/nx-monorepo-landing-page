@@ -1,0 +1,36 @@
+{
+  "name": "web",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "web",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "web:build",
+        "dev": true
+      }
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/web",
+        "root": "web"
+      }
+    },
+    "start": {
+      "executor": "@nx/next:start",
+      "options": {
+        "buildTarget": "web:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["web/**/*.ts", "web/**/*.tsx"]
+      }
+    }
+  }
+}
