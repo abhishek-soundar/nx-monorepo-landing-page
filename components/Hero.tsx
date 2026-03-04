@@ -151,9 +151,9 @@ export default function Hero() {
         </div>
 
         {/* Right Side - Phone Mockup */}
-        <div className="relative flex justify-center lg:justify-end items-center w-full">
-          {/* Phone Mockup Container - Scaled to be balanced */}
-          <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] xl:max-w-[360px] aspect-[9/18.5] bg-gradient-to-br from-card to-background rounded-[3rem] border-[8px] border-border shadow-2xl overflow-hidden">
+        <div className="relative flex justify-center lg:justify-end items-center w-full py-8 lg:py-0">
+          {/* Phone Mockup Container - Fixed scaling for real mobile devices */}
+          <div className="relative min-w-[240px] w-[260px] sm:w-[280px] md:w-[300px] lg:w-[340px] max-h-[520px] aspect-[9/18.5] bg-gradient-to-br from-card to-background rounded-[3rem] border-[8px] border-border shadow-2xl overflow-hidden">
             {/* Phone Notch */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl z-20" />
 
