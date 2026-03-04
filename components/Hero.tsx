@@ -80,14 +80,14 @@ export default function Hero() {
 
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-x-hidden pt-28 sm:pt-32 lg:pt-36 pb-20">
+    <section className="relative pt-28 pb-16 flex flex-col items-center justify-center overflow-visible">
       {/* Background canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       {/* Glow effect divs */}
       <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-bl from-orange-600/20 to-transparent rounded-full blur-3xl z-0 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-12 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:grid lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-12 items-center w-full h-auto">
         {/* Left Content */}
         <div className="flex flex-col justify-center space-y-6 max-w-xl">
           {/* Badge */}
@@ -115,7 +115,7 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 items-stretch sm:items-center">
+          <div className="flex flex-wrap gap-4 pt-4 items-stretch sm:items-center">
             <Button
               size="lg"
               className="bg-secondary text-white hover:bg-orange-600 font-semibold rounded-xl px-8 py-6 text-base transition-all duration-300 hover:scale-105 w-full sm:w-auto"
@@ -151,9 +151,9 @@ export default function Hero() {
         </div>
 
         {/* Right Side - Phone Mockup */}
-        <div className="relative flex justify-center lg:justify-end items-center w-full py-8 lg:py-0">
-          {/* Phone Mockup Container - Fixed scaling for real mobile devices */}
-          <div className="relative min-w-[240px] w-[260px] sm:w-[280px] md:w-[300px] lg:w-[340px] max-h-[520px] aspect-[9/18.5] bg-gradient-to-br from-card to-background rounded-[3rem] border-[8px] border-border shadow-2xl overflow-hidden">
+        <div className="relative flex justify-center lg:justify-end items-center w-full">
+          {/* Phone Mockup Container - Balanced and constrained for natural growth */}
+          <div className="relative min-w-[240px] w-[260px] sm:w-[280px] md:w-[300px] lg:w-[320px] max-h-[520px] h-auto aspect-[9/18.5] bg-gradient-to-br from-card to-background rounded-[3rem] border-[8px] border-border shadow-2xl overflow-hidden">
             {/* Phone Notch */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl z-20" />
 
@@ -206,6 +206,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
