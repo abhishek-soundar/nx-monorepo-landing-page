@@ -38,13 +38,15 @@ export default function Hero() {
       ctx.fillStyle = '#0E1013';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw golden glow from top
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height * 0.4);
-      gradient.addColorStop(0, 'rgba(255, 180, 0, 0.15)');
-      gradient.addColorStop(0.5, 'rgba(255, 140, 0, 0.08)');
+      // Draw subtle radial glow from top center
+      const gradient = ctx.createRadialGradient(
+        canvas.width / 2, 0, 0,
+        canvas.width / 2, 0, canvas.height * 0.8
+      );
+      gradient.addColorStop(0, 'rgba(0, 62, 227, 0.15)'); // Action Blue glow
       gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height * 0.4);
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw stars with twinkling effect
       stars.forEach((star) => {
@@ -85,10 +87,11 @@ export default function Hero() {
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       {/* Glow effect divs */}
-      <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-bl from-orange-600/20 to-transparent rounded-full blur-3xl z-0 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl z-0 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-tr from-ai-accent/5 to-transparent rounded-full blur-3xl z-0 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8 max-w-xl">
             {/* Badge */}
@@ -99,50 +102,51 @@ export default function Hero() {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] text-balance">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-[1.05] tracking-tight text-balance">
                 The Future of
                 <br />
                 Messaging is
                 <br />
-                <span className="bg-gradient-to-r from-secondary via-primary to-secondary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-[#4D7CFF] to-primary bg-clip-text text-transparent">
                   AI-Integrated
                 </span>
               </h1>
             </div>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Experience real-time messaging, AI-powered assistant, creative content generation, and enterprise-grade security—all in one seamless platform.
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-lg">
+              Real-time messaging, group collaboration, and AI tools powered by Gemini and WaveSpeed.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4 items-stretch sm:items-center">
-              <Button
-                size="lg"
-                className="bg-secondary text-white hover:bg-orange-600 font-semibold rounded-xl px-8 py-6 text-base transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-              >
-                Get it on Google Play
-              </Button>
+            <div className="flex flex-wrap gap-5 pt-4 items-stretch sm:items-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-background hover:bg-gray-100 font-semibold rounded-xl px-8 py-6 text-base transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+                className="bg-primary text-white hover:bg-primary/90 font-bold rounded-2xl px-10 py-7 text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,62,227,0.4)] w-full sm:w-auto"
               >
                 <Link href="/download">
                   Download on App Store
                 </Link>
               </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-border bg-transparent text-foreground hover:bg-card font-bold rounded-2xl px-10 py-7 text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
+                Get it on Google Play
+              </Button>
             </div>
 
             {/* Follow Us Social */}
-            <div className="flex flex-col gap-4 pt-8">
-              <span className="text-sm font-medium text-muted-foreground">Follow Us</span>
+            <div className="flex flex-col gap-4 pt-4">
+              <span className="text-sm font-semibold text-muted-foreground/60 uppercase tracking-widest">Follow Us</span>
               <div className="flex gap-4">
                 {['f', '𝕏', 'in'].map((social) => (
                   <a
                     key={social}
                     href="#"
-                    className="w-10 h-10 rounded-full border-2 border-secondary flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300 font-semibold text-sm"
+                    className="w-11 h-11 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 font-bold text-base"
                   >
                     {social}
                   </a>
@@ -152,56 +156,62 @@ export default function Hero() {
           </div>
 
           {/* Right Side - Phone Mockup */}
-          <div className="relative flex justify-center lg:justify-end items-center w-full">
-            {/* Phone Mockup Container - Balanced and constrained for natural growth */}
-            <div className="relative w-[260px] sm:w-[280px] md:w-[300px] lg:w-[320px] max-h-[520px] h-auto aspect-[9/18.5] bg-gradient-to-br from-card to-background rounded-[3rem] border-[8px] border-border shadow-2xl overflow-hidden">
+          <div className="relative flex justify-center lg:justify-end items-center w-full group">
+            {/* Ambient glows around phone */}
+            <div className="absolute -inset-10 bg-primary/20 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute -inset-10 bg-ai-accent/10 blur-[80px] rounded-full translate-x-10 translate-y-10 opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+            {/* Phone Mockup Container */}
+            <div className="relative w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] h-auto aspect-[9/18.5] bg-[#000] rounded-[3.5rem] border-[10px] border-[#1A1C1E] shadow-[0_0_80px_rgba(0,0,0,0.5)] overflow-hidden transition-transform duration-500 hover:scale-[1.02] hover:-rotate-1">
+              {/* Phone Reflection Effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent z-10 pointer-events-none" />
+
               {/* Phone Notch */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl z-20" />
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-36 h-7 bg-[#1A1C1E] rounded-b-3xl z-20 flex items-center justify-center">
+                <div className="w-12 h-1 bg-white/10 rounded-full" />
+              </div>
 
               {/* Phone Screen */}
-              <div className="w-full h-full bg-black flex flex-col justify-between p-6 pt-10">
+              <div className="w-full h-full bg-gradient-to-b from-[#0E1013] to-black flex flex-col justify-between p-6 pt-12 relative">
                 {/* Status Bar */}
-                <div className="flex items-center justify-between text-white px-2">
-                  <span className="text-sm font-semibold">4:23</span>
-                  <div className="flex gap-1.5 items-center">
-                    <span className="text-[10px]">••••</span>
+                <div className="flex items-center justify-between text-white/90 px-3">
+                  <span className="text-sm font-bold">9:41</span>
+                  <div className="flex gap-2 items-center">
                     <span className="text-xs">📶</span>
+                    <span className="text-xs font-bold">5G</span>
                     <span className="text-xs">🔋</span>
                   </div>
                 </div>
 
                 {/* Main Content */}
-                <div className="flex flex-col items-center justify-center flex-1 gap-8">
+                <div className="flex flex-col items-center justify-center flex-1 gap-10">
                   {/* ZYNC Logo */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
+                    <div className="absolute inset-0 bg-primary/30 blur-3xl rounded-full animate-pulse" />
                     <Image
                       src="/zync-logo.jpg"
                       alt="Zync Logo"
-                      width={120}
-                      height={120}
-                      className="relative rounded-3xl shadow-2xl"
+                      width={140}
+                      height={140}
+                      className="relative rounded-[2.5rem] shadow-2xl border border-white/5"
                     />
                   </div>
 
                   {/* Welcome Text */}
-                  <div className="text-center space-y-3">
-                    <h2 className="text-xl sm:text-2xl font-bold text-white">Welcome to ZYNC!</h2>
-                    <p className="text-sm text-gray-400">where AI meets expression</p>
+                  <div className="text-center space-y-4">
+                    <h2 className="text-2xl font-black text-white tracking-tight">ZYNC</h2>
+                    <p className="text-sm text-gray-400 font-medium leading-relaxed">
+                      Secure. Seamless.<br />AI-Powered.
+                    </p>
                   </div>
 
                   {/* Get Started Button */}
-                  <button className="w-full bg-primary text-white font-semibold py-3 rounded-2xl hover:bg-primary/90 transition-colors mt-4 text-sm shadow-lg shadow-primary/20">
-                    Get Started
+                  <button className="w-full bg-primary text-white font-bold py-4 rounded-[1.25rem] hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 text-base active:scale-95">
+                    Start Chatting
                   </button>
 
-                  {/* Sign In Link */}
-                  <div className="text-center mt-2">
-                    <p className="text-xs text-gray-500">
-                      Already have account?{' '}
-                      <span className="text-secondary font-semibold hover:underline cursor-pointer">Sign In Here</span>
-                    </p>
-                  </div>
+                  {/* AI Accent Element */}
+                  <div className="absolute bottom-10 right-0 w-24 h-24 bg-ai-accent/20 blur-3xl rounded-full -z-10" />
                 </div>
               </div>
             </div>

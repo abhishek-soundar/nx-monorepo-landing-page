@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import CoreFeatures from '@/components/CoreFeatures';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import AILaboratory from '@/components/AILaboratory';
 import TechnicalExcellence from '@/components/TechnicalExcellence';
@@ -12,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      <FeaturesGrid />
+      <CoreFeatures />
       <AILaboratory />
       <TechnicalExcellence />
       <Footer />
