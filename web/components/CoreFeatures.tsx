@@ -74,8 +74,7 @@ const features = [
 
 export default function CoreFeatures() {
     return (
-        <section className="py-28 bg-[#0E1013] overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+<section id="features" className="py-28 bg-[#0E1013] overflow-hidden">            <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-24">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
