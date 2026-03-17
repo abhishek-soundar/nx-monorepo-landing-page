@@ -125,16 +125,19 @@ export default function Hero() {
                 size="lg"
                 className="bg-primary text-white hover:bg-primary/90 font-bold rounded-2xl px-10 py-7 text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,62,227,0.4)] w-full sm:w-auto"
               >
-                <Link href="/download">
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
                   Download on App Store
-                </Link>
+                </a>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="border-border bg-transparent text-foreground hover:bg-card font-bold rounded-2xl px-10 py-7 text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
-                Get it on Google Play
+                <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer">
+                  Get it on Google Play
+                </a>
               </Button>
             </div>
 
@@ -142,13 +145,19 @@ export default function Hero() {
             <div className="flex flex-col gap-4 pt-4">
               <span className="text-sm font-semibold text-muted-foreground/60 uppercase tracking-widest">Follow Us</span>
               <div className="flex gap-4">
-                {['f', '𝕏', 'in'].map((social) => (
+                {[
+                  { label: 'f', href: 'https://www.facebook.com' },
+                  { label: '𝕏', href: 'https://x.com' },
+                  { label: 'in', href: 'https://www.linkedin.com' }
+                ].map((social) => (
                   <a
-                    key={social}
-                    href="#"
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-11 h-11 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 font-bold text-base"
                   >
-                    {social}
+                    {social.label}
                   </a>
                 ))}
               </div>
@@ -189,11 +198,11 @@ export default function Hero() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/30 blur-3xl rounded-full animate-pulse" />
                     <Image
-                      src="/zync-logo.jpg"
+                      src="/icon.png"
                       alt="Zync Logo"
                       width={140}
                       height={140}
-                      className="relative rounded-[2.5rem] shadow-2xl border border-white/5"
+                      className="relative"
                     />
                   </div>
 

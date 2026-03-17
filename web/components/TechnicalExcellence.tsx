@@ -27,7 +27,7 @@ export default function TechnicalExcellence() {
   ];
 
   return (
-    <section id="technical" className="relative py-12 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-background overflow-x-hidden scroll-smooth">
+    <section id="technical" className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 md:pt-12 md:pb-16 px-4 sm:px-6 lg:px-8 bg-background overflow-x-hidden scroll-smooth">
       {/* Gradient background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 -left-24 sm:-left-48 w-64 h-64 sm:w-96 sm:h-96 bg-primary/5 rounded-full blur-3xl" />

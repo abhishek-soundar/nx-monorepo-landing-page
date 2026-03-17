@@ -10,7 +10,6 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Features', href: '#features' },
-    { label: 'AI Lab', href: '#ai-lab' },
     { label: 'Technical', href: '#technical' },
   ];
 
@@ -20,7 +19,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition flex-shrink-0">
           <Image
-            src="/zync-logo.jpg"
+            src="/icon.png"
             alt="Zync Logo"
             width={40}
             height={40}
