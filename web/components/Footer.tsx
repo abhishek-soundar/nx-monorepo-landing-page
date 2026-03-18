@@ -16,9 +16,9 @@ export default function Footer() {
               <Image
                 src="/icon.png"
                 alt="Zync Logo"
-                width={40}
-                height={40}
-                className="rounded-lg"
+                width={48}
+                height={48}
+                className="rounded-lg object-contain"
               />
             </Link>
             <p className="text-xs sm:text-sm text-muted-foreground">
@@ -32,7 +32,7 @@ export default function Footer() {
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/smart-messaging"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Smart Messaging
@@ -40,7 +40,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/ai-assistant"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   AI Assistant
@@ -48,7 +48,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/creative-suite"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Creative Suite
@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/security"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Security
@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/location-sharing"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Location Sharing
@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/speaker-sticker"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Speaker Sticker
@@ -84,12 +84,12 @@ export default function Footer() {
           {/* Company */}
           <div className="space-y-3 sm:space-y-4">
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
-              <Link href="/empty" className="hover:opacity-80 transition">Company</Link>
+              <Link href="/about" className="hover:opacity-80 transition">Company</Link>
             </h3>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link
-                  href="/empty"
+                  href="/about"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   About
@@ -97,7 +97,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/empty"
+                  href="/blog"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Blog
@@ -105,7 +105,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/empty"
+                  href="/contact"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Contact
@@ -113,7 +113,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/empty"
+                  href="/support"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Support
@@ -125,12 +125,12 @@ export default function Footer() {
           {/* Legal */}
           <div className="space-y-3 sm:space-y-4">
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
-              <Link href="/empty" className="hover:opacity-80 transition">Legal</Link>
+              <Link href="/privacy" className="hover:opacity-80 transition">Legal</Link>
             </h3>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link
-                  href="/empty"
+                  href="/privacy"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Privacy Policy
@@ -138,7 +138,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/empty"
+                  href="/terms"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Terms of Service
@@ -146,7 +146,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/empty"
+                  href="/security"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Security
@@ -154,7 +154,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/empty"
+                  href="/cookies"
                   className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition"
                 >
                   Cookies

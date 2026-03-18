@@ -21,9 +21,9 @@ export default function Navigation() {
           <Image
             src="/icon.png"
             alt="Zync Logo"
-            width={40}
-            height={40}
-            className="rounded-lg"
+            width={48}
+            height={48}
+            className="rounded-lg object-contain"
           />
         </Link>
 
